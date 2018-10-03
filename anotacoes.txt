@@ -1,1 +1,21 @@
+~~utilizar os dados do datapoa, neste link:
+http://datapoa.com.br/dataset/unidades-de-saude/resource/ecf0e670-2968-4a01-b256-69f64e3e9ca2
+
+
+~~baseando-se:
 https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application
+
+
+
+
+passo a passo ao nosso trabalho:
+
+
+~~1~~vericação dos programaas no visual code:
+node -v
+v8.11.1
+npm -v
+6.0.0
+
+~~2~~o nome do trabalho será: trabalhando
+ng new trabalhando
