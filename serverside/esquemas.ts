@@ -1,6 +1,22 @@
 import * as mongoose from 'mongoose';
-import { Usuario, Ponto, Tipo, Voto} from './entidades';
+import { Ponto } from './entidades';
 
+interface PontoDocument extends Ponto, mongoose.Document {}
+
+export const PontoModel = mongoose.model<PontoDocument>('Ponto', new mongoose.Schema({
+    publico: { type: String, required: true, enum: ['Público', 'Privado', 'Público/Privado'] },
+    tipo: { type: String, required: true, enum: ['Hospital', "PA"] },
+    nome: { type: String, required: true, max: 100 },
+    endereco: { type: String, required: true, max: 200 },
+    telefone: { type: String, required: true, max: 15 },
+    link: { type: String, max: 150 },
+    especialidades: { type: String, required: true, max: 200 },
+    latitude: { type: String, required: true, max: 40 },
+    longitude: { type: String, required: true, max: 40 },
+}), 'pontos');
+
+
+/*
 interface UsuarioDocument extends Usuario, mongoose.Document {}
 
 export const UsuarioModel = mongoose.model<UsuarioDocument>('Usuario', new mongoose.Schema({
@@ -15,18 +31,6 @@ export const UsuarioModel = mongoose.model<UsuarioDocument>('Usuario', new mongo
     votoNoPonto: [{type: mongoose.SchemaTypes.ObjectId, ref: 'Votos'}]
 }), 'usuarios');
 
-interface PontoDocument extends Ponto, mongoose.Document {}
-
-export const PontoModel = mongoose.model<PontoDocument>('Ponto', new mongoose.Schema({
-    titulo: { type: String, required: true, max: 100 },
-    descricao: { type: String, max: 200 },
-    latitude: { type: String, required: true, max: 40 },
-    longitude: { type: String, required: true, max: 40 },
-    data: { type: Date, default: Date.now },
-    tipo: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Tipo', required: true }],
-    autor: { type: mongoose.SchemaTypes.ObjectId, ref: 'Usuario' },
-    reputacao: { type: Number, default: 0 },
-}), 'pontos');
 
 interface TipoDocument extends Tipo, mongoose.Document {}
 
@@ -40,3 +44,4 @@ export const VotoModel = mongoose.model<VotoDocument>('Voto', new mongoose.Schem
     voto: { type: String, required: true, enum: ['Neutro', 'A favor', 'Contra'], default: 'Neutro' },
     ponto: { type: mongoose.SchemaTypes.ObjectId, ref: 'Ponto' }
 }), 'votos');
+*/
