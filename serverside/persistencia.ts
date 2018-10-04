@@ -1,7 +1,14 @@
-import { PontoModel, TipoModel, UsuarioModel, VotoModel } from './esquemas';
-import { Ponto, Tipo, Usuario, Voto } from './entidades';
+import { PontoModel } from './esquemas';
+import { Ponto } from './entidades';
 
-export class UsuarioRepositorio {
+export class PontoRepositorio {
+    static async criarPonto(u: Ponto): Promise<Ponto> {
+        let novo = await PontoModel.create(u);
+        return novo.save();
+    }
+}
+
+/*export class UsuarioRepositorio {
     static async criarUsuario(u: Usuario): Promise<Usuario> {
         let novo = await UsuarioModel.create(u);
         return novo.save();
@@ -21,4 +28,4 @@ export class LivroRepositorio {
         let novoLivro = await LivroModel.create(livro);
         return novoLivro.save();
     }
-}
+}*/
