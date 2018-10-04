@@ -1,13 +1,15 @@
 export interface Ponto {
-    titulo: string,
-    descricao: string,
+    publico: string,
+    tipo: string,
+    nome: string,
     latitude: string,
     longitude: string,
-    data: Date,
-    tipo: Tipo[],
-    autor: Usuario,
-    reputacao: number
+    endereco: string,
+    telefone: string,
+    link: string,
+    especialidades: string
 }
+/*
 export interface Usuario {
     nome: string,
     email: string,
@@ -25,4 +27,4 @@ export interface Voto {
 }
 export interface Tipo {
     categoria: string
-}
+}*/
