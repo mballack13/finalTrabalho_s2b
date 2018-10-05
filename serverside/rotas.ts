@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { AutorControlador } from "./controlador";
+import { PontoControlador } from "./controlador";
 
 const roteador = Router();
-roteador.get('/autores',AutorControlador.todosAutores);
-roteador.get('/alo',AutorControlador.alo);
+roteador.get('/pontos',PontoControlador.todosPontos);
+roteador.get('/alo',PontoControlador.alo);
 
 export {roteador};

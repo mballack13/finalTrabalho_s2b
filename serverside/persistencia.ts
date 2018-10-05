@@ -6,6 +6,10 @@ export class PontoRepositorio {
         let novo = await PontoModel.create(u);
         return novo.save();
     }
+    static async todos(): Promise<Ponto[]> {
+        let docs: Ponto[] = await PontoModel.find().exec();
+        return docs;
+    }
 }
 
 /*export class UsuarioRepositorio {

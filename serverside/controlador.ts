@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from "express";
-import {AutorRepositorio} from './persistencia';
+import { PontoRepositorio } from './persistencia';
 
-export class AutorControlador{
-    static async todosAutores(req:Request,res:Response,next:NextFunction){
+export class PontoControlador{
+    static async todosPontos(req:Request,res:Response,next:NextFunction){
         console.log('aqui');
         
         try {
-            let autores = await AutorRepositorio.todosAutores();
-            res.json(autores);
-            console.log(autores);
+            //let docs = await PontoRepositorio.todos();
+            res.send('oi');
+            //console.log(docs);
             
         } catch (erro) {
             next(erro);

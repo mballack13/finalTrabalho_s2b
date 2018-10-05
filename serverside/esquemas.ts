@@ -1,9 +1,9 @@
-import * as mongoose from 'mongoose';
 import { Ponto } from './entidades';
+import { Document, model, Schema } from 'mongoose';
 
-interface PontoDocument extends Ponto, mongoose.Document {}
+interface PontoDocument extends Ponto, Document {}
 
-export const PontoModel = mongoose.model<PontoDocument>('Ponto', new mongoose.Schema({
+export const PontoModel = model<PontoDocument>('Ponto', new Schema({
     publico: { type: String, required: true, enum: ['Público', 'Privado', 'Público/Privado'] },
     tipo: { type: String, required: true, enum: ['Hospital', "PA"] },
     nome: { type: String, required: true, max: 100 },
@@ -12,9 +12,8 @@ export const PontoModel = mongoose.model<PontoDocument>('Ponto', new mongoose.Sc
     link: { type: String, max: 150 },
     especialidades: { type: String, required: true, max: 200 },
     latitude: { type: String, required: true, max: 40 },
-    longitude: { type: String, required: true, max: 40 },
+    longitude: { type: String, required: true, max: 40 }
 }), 'pontos');
-
 
 /*
 interface UsuarioDocument extends Usuario, mongoose.Document {}
