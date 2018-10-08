@@ -11,11 +11,23 @@ https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud
 passo a passo ao nosso trabalho:
 
 
-~~1~~verica��o dos programaas no visual code:
+~~1~~verica?o dos programaas no visual code:
 node -v
 v8.11.1
 npm -v
 6.0.0
 
-~~2~~o nome do trabalho ser�: trabalhando
+~~2~~o nome do trabalho ser? trabalhando
 ng new trabalhando
+
+===============================================================================
+05/10/2018
+ó gurizada, estou me baseandoa agora neste link pra fazer o CRUD:
+https://appdividend.com/2018/05/27/angular-6-crud-example-mean-stack-tutorial/
+
+
+paramos no passo 11, deste link..tá sendo feito exatamente como está no site, obviamente teremos que mudar as variaveis do que está no site para a nossa aplicação..importante, ao menos, "serverside" quase pronto e também "trabalhando" também
+
+deixar registrado:
+	"serverside" a mineração dos dados
+	"trabalhando" nosso CRUD (além da mineração dos dados), para adicionarmos mais algo..
