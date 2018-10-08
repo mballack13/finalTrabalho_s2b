@@ -1,13 +1,13 @@
-export interface Ponto {
-    publico: string,
-    tipo: string,
-    nome: string,
+export interface Point {
+    public: string,
+    type: string,
+    name: string,
     latitude: string,
     longitude: string,
-    endereco: string,
-    telefone: string,
+    address: string,
+    fone: string,
     link: string,
-    especialidades: string
+    specialties: string
 }
 /*
 export interface Usuario {

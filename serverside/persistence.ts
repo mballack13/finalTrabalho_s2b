@@ -1,13 +1,13 @@
-import { PontoModel } from './esquemas';
-import { Ponto } from './entidades';
+import { PointModel } from './schemes';
+import { Point } from './entities';
 
-export class PontoRepositorio {
-    static async criarPonto(u: Ponto): Promise<Ponto> {
-        let novo = await PontoModel.create(u);
-        return novo.save();
+export class PointRepo {
+    static async createPoint(p: Point): Promise<Point> {
+        let newP = await PointModel.create(p);
+        return newP.save();
     }
-    static async todos(): Promise<Ponto[]> {
-        let docs: Ponto[] = await PontoModel.find().exec();
+    static async all(): Promise<Point[]> {
+        let docs: Point[] = await PointModel.find().exec();
         return docs;
     }
 }

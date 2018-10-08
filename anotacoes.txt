@@ -31,3 +31,6 @@ paramos no passo 11, deste link..tá sendo feito exatamente como está no site, 
 deixar registrado:
 	"serverside" a mineração dos dados
 	"trabalhando" nosso CRUD (além da mineração dos dados), para adicionarmos mais algo..
+===============================================================================
+08/10/2018
+colocar "npm install bootstrap" dentro da pasta TRABALHANDO;

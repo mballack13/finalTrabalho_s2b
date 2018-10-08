@@ -1,9 +1,9 @@
 import express from 'express';
-import {roteador} from './rotas';
+import { router } from './routes';
 import cors from 'cors';
 
 const app = express();
 app.use(cors());
-app.use('/',roteador);
+app.use('/',router);
 
 export {app};
