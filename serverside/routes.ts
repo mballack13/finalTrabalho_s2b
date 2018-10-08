@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { PointControlador } from "./controller";
-
+import { PointController } from "./controller";
+ 
 const router = Router();
-router.get('/points',PointController.allPontos);
+router.get('/points',PointController.allPoints);
 router.get('/hello',PointController.hello);
 
 export {router};

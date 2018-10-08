@@ -1,6 +1,12 @@
 import { connect } from 'mongoose';
 import { app } from './app';
 
+import csv from 'csv-parse';
+import fs = require('fs');
+var myParser:csv.Parser = csv('./doctorpoa.csv',{delimiter: ','}, function(data, err) {
+    console.log(data);
+}) as csv.Parser;
+
 async function main() {
     const url = 'mongodb://localhost:27017/biblioteca';
     try {
