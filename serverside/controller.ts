@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { PontoRepositorio } from './persistencia';
+import { PointRepo } from './persistence';
 
-export class PontoControlador{
-    static async todosPontos(req:Request,res:Response,next:NextFunction){
+export class PointController{
+    static async allPoints(req:Request,res:Response,next:NextFunction){
         console.log('aqui');
         
         try {
@@ -14,7 +14,7 @@ export class PontoControlador{
             next(erro);
         }
     }
-    static async alo(req:Request,res:Response,next:NextFunction){
+    static async hello(req:Request,res:Response,next:NextFunction){
         res.send('alo');
     }
 }
