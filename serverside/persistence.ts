@@ -4,10 +4,11 @@ import { Point } from './entities';
 export class PointRepo {
     static async createPoint(p: Point): Promise<Point> {
         let newP = await PointModel.create(p);
+        console.log('create '+p.name)
         return newP.save();
     }
     static async all(): Promise<Point[]> {
-        let docs: Point[] = await PointModel.find().exec();
+        let docs = await PointModel.find().lean().exec();
         return docs;
     }
 }
