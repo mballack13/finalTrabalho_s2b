@@ -5,7 +5,7 @@ export interface Point {
     latitude: string,
     longitude: string,
     address: string,
-    fone: string,
+    phone: string,
     link: string,
     specialties: string
 }
