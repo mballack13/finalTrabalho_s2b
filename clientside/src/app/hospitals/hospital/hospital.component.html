@@ -1,4 +1,5 @@
 <h2>Hospitais</h2>
+<h3>Filtrar Por:</h3>
 <ul>
   <li *ngFor="let index of hospitals" (click)="onSelect(index)" [class.selected]="isSelected(index)">
     <span>{{index.name}}</span>
