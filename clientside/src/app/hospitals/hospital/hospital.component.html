@@ -5,11 +5,13 @@
   </li>
 </ul>
 
-<!--div *ngIf="selectedHospital">
+<div *ngIf="selectedHospital">
   <h2>{{selectedHospital.name | uppercase}}</h2>
-  <label>Nome
-    <input placeholder="digite um nome" [(ngModel)]="selectedHospital.name">
-  </label>
-  <button (click)="clearSel()">Salvar</button>
+  <hr>
+  <span>Tipo: {{selectedHospital.type}}</span><br>
+  <span>Público ou Privado: {{selectedHospital.public}}</span><br>
+  <span>Telefone: {{selectedHospital.phone}}</span><br>
+  <span>Endereço: {{selectedHospital.address}}</span><br>
+  <span>Site: <a href="{{selectedHospital.link}}">{{selectedHospital.link}}</a></span><br>
+  <span>Especialidades: {{selectedHospital.specialties}}</span><br>
 </div>
--->
