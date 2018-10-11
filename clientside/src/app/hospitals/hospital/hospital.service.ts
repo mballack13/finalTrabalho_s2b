@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { } from '../../models/hospital';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,6 @@ const API = 'http://localhost:3000';
 
 @Injectable({providedIn: 'root'})
 export class PhotoService {
-    
     constructor (private http:HttpClient) {}
 
     listFromUser (userName: string) {
@@ -26,7 +27,7 @@ export class PhotoService {
     }
 
     listFromUserPaginated (userName: string, page: number) {
-        
+
         const params = new HttpParams()
             .append('page', page.toString());
 
