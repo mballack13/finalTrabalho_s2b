@@ -10,7 +10,7 @@ function create(){
         var fileContent;
 
         return new Promise(function(resolve) {
-            fileContent = fs.readFileSync(path, {encoding: 'utf-8'});
+            fileContent = fs.readFileSync(path, {encoding: 'latin1'});
             resolve(fileContent);
         });
     }
@@ -54,4 +54,4 @@ async function main() {
     }
 }
 main();
-//create();
+// create();

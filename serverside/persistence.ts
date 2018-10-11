@@ -1,6 +1,5 @@
 import { PointModel } from './schemes';
 import { Point } from './entities';
-import { createSecureServer } from 'http2';
 
 export class PointRepo {
     static async createPoint(p: Point): Promise<Point> {
@@ -13,12 +12,16 @@ export class PointRepo {
         return docs;
     }
     static async searchName(t: string): Promise<Point[]> {
-        let docs = await PointModel.find({'name': new RegExp(t, 'i')}).exec();
+        let docs = await PointModel.find({'name': new RegExp(t, 'i')}).lean().exec();
         return docs;
     }
     static async searchSpecialties(t: string): Promise<Point[]> {
-        let docs = await PointModel.find({'specialties': new RegExp(t, 'i')}).exec();
+        let docs = await PointModel.find({'specialties': new RegExp(t, 'i')}).lean().exec();
         return docs;
+    }
+    static async getPoint(id: string): Promise<Point> {
+        let doc = await PointModel.findOne({'_id': id}).lean().exec();
+        return doc;
     }
 }
 
