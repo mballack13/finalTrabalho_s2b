@@ -11,7 +11,7 @@ export class HospitalService {
   constructor(private http: HttpClient) { }
 
   getHospitals(): Observable<Hospital[]> {
-    return this.http.get<Hospital[]>('http://localhost:80/points');
+    return this.http.get<Hospital[]>('http://localhost:3000/points');
   }
 
 }

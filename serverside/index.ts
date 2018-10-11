@@ -45,7 +45,7 @@ async function main() {
         const cli = await connect(url, { useNewUrlParser: true });
         console.log('Mongo conectado com sucesso');
         const myApp = new App();
-        myApp.app.listen(80, () => {
+        myApp.app.listen(3000, () => {
             console.log("Server Running...");
         });
         
