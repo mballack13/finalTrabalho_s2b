@@ -1,38 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { } from '../../models/hospital';
+import { Hospital } from '../../models/hospital';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HospitalService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getHospitals(): Observable<Hospital[]> {
+    return this.http.get<Hospital[]>('localhost:80/points');
+  }
+
 }
-
-/*
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Photo } from "./photo";
-
-const API = 'http://localhost:3000';
-
-@Injectable({providedIn: 'root'})
-export class PhotoService {
-    constructor (private http:HttpClient) {}
-
-    listFromUser (userName: string) {
-        return this.http
-          .get<Photo[]>(API + `/${userName}/photos`);
-    }
-
-    listFromUserPaginated (userName: string, page: number) {
-
-        const params = new HttpParams()
-            .append('page', page.toString());
-
-        return this.http
-          .get<Photo[]>(API + `/${userName}/photos`, {params: params});
-    }
-}
-*/
