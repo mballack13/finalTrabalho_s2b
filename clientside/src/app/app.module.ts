@@ -8,11 +8,16 @@ import { ErrorsModule } from './errors/errors.module';
 import { MainContentModule } from './main-content/main-content.module';
 import { FooterModule } from './footer/footer.module';
 import { HeaderModule } from './header/header.module';
+import { HospitalService } from './hospitals/hospital/hospital.service';
+import { HospitalComponent } from './hospitals/hospital/hospital.component';
+import { HttpClientModule } from '@angular/common/http';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    HospitalComponent
   ],
   imports: [
     BrowserModule,
@@ -20,9 +25,10 @@ import { HeaderModule } from './header/header.module';
     MainContentModule,
     ErrorsModule,
     FooterModule,
-    HeaderModule
+    HeaderModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HospitalService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

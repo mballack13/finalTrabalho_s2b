@@ -1,6 +1,6 @@
+import cors = require('cors');
 import express from 'express';
 import router from './routes';
-import cors from 'cors';
 import bodyParser = require('body-parser');
 
 export class App {
@@ -13,10 +13,10 @@ export class App {
     }
 
     public config():void {
+        this.app.use(cors());
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.routes();
-        this.app.use(cors());
     }
 
     private routes(): void {
