@@ -11,6 +11,8 @@ import {  } from 'rxjs';
 export class HospitalComponent implements OnInit {
   hospitals: Hospital[];
   selectedHospital: Hospital;
+  spec: string;
+  name: string;
 
   constructor(private hospitalService: HospitalService) { }
 
@@ -29,4 +31,17 @@ export class HospitalComponent implements OnInit {
   isSelected(h: Hospital): boolean {
     return(this.selectedHospital === h);
   }
+  filterName(): void {
+    this.hospitals.forEach(element => {
+      const aux = element.name.toLowerCase();
+      element.display = !(aux.includes(this.name.toLowerCase()));
+    });
+  }
+  filterSpec(): void {
+    this.hospitals.forEach(element => {
+      const aux = element.specialties.toLowerCase();
+      element.display = !(aux.includes(this.spec.toLowerCase()));
+    });
+  }
+
 }

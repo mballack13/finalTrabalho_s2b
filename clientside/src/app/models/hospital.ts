@@ -9,4 +9,5 @@ export interface Hospital {
   phone: string;
   link: string;
   specialties: string;
+  display: boolean;
 }

@@ -1,9 +1,15 @@
 <h2 class="text-center">Hospitais</h2>
 <section class="container-fluid">
   <div class="row">
+    <span>Filtrar Por... :</span>
+    <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()">
+    <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()">
+  </div>
+  <div class="row">
     <div class="col-lg-6">
       <ul class="list-group text-center mt-3 mb-3 ">
-        <li *ngFor="let index of hospitals" (click)="onSelect(index)" [class.selected]="isSelected(index)" class="list-group-item">
+        <li *ngFor="let index of hospitals" [hidden]="index.display" (click)="onSelect(index)" [class.selected]="isSelected(index)"
+        class="list-group-item">
           <a class="btn">{{index.name}}</a>
         </li>
       </ul>
