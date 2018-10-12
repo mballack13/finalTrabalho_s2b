@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hospital } from 'src/app/models/hospital';
 import { HospitalService } from './hospital.service';
+import {  } from 'rxjs';
 
 @Component({
   selector: 'app-hospital',

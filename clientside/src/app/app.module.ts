@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -11,7 +12,6 @@ import { HeaderModule } from './header/header.module';
 import { HospitalService } from './hospitals/hospital/hospital.service';
 import { HospitalComponent } from './hospitals/hospital/hospital.component';
 import { HttpClientModule } from '@angular/common/http';
-import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,10 @@ import { from } from 'rxjs';
     ErrorsModule,
     FooterModule,
     HeaderModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [HospitalService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
