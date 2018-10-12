@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -11,13 +13,14 @@ import { FooterModule } from './footer/footer.module';
 import { HeaderModule } from './header/header.module';
 import { HospitalService } from './hospitals/hospital/hospital.service';
 import { HospitalComponent } from './hospitals/hospital/hospital.component';
-import { HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    HospitalComponent
+    HospitalComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
     FooterModule,
     HeaderModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDc9mTQhIYkTc_94E-hqaO6RQX2l3EJtY4'
+    })
   ],
   providers: [HospitalService],
   bootstrap: [AppComponent]

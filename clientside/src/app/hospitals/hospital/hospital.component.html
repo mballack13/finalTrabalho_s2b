@@ -1,10 +1,10 @@
-<h2 class="text-center">Hospitais</h2>
+<div class="row form-group container-fluid search-bar p-1">
+  <h3 class="col-lg-2">Filtrar Por:</h3>
+  <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()" autofocus class="form-control col-lg-4">
+  <span class="col-lg-1"></span>
+  <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control col-lg-4">
+</div>
 <section class="container-fluid">
-  <div class="row">
-    <span>Filtrar Por... :</span>
-    <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()">
-    <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()">
-  </div>
   <div class="row">
     <div class="col-lg-6">
       <ul class="list-group text-center mt-3 mb-3 ">
@@ -25,6 +25,11 @@
           <a href="{{selectedHospital.link}}">{{selectedHospital.link}}</a>
         </li>
         <li class="list-group-item">Especialidades: {{selectedHospital.specialties}}</li>
+        <agm-map *ngIf="latitude && longitude" [latitude]="latitude" [longitude]="longitude">
+          <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+        </agm-map>
+        <li class="list-group-item">Latitude: {{selectedHospital.latitude}}</li>
+        <li class="list-group-item">Longitude: {{selectedHospital.longitude}}</li>
       </ul>
     </div>
   </div>

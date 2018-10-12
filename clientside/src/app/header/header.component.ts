@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   title = 'S.O.S. POA';
-  main_page = '#';
+  main_page = 'http://localhost:4200/home';
 
   constructor() { }
 

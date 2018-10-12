@@ -13,6 +13,10 @@ export class HospitalComponent implements OnInit {
   selectedHospital: Hospital;
   spec: string;
   name: string;
+  latPartes: string[];
+  longPartes: string[];
+  latitude: number = -51;
+  longitude: number = -30;
 
   constructor(private hospitalService: HospitalService) { }
 
@@ -24,6 +28,10 @@ export class HospitalComponent implements OnInit {
   }
   onSelect(h: Hospital): void {
     this.selectedHospital = h;
+    this.latPartes = h.latitude.split(',');
+    this.latitude = parseFloat(this.latPartes[0]+'.'+this.latPartes[1]);
+    this.longPartes = h.longitude.split(',');
+    this.longitude = parseFloat(this.longPartes[0]+'.'+this.longPartes[1]);
   }
   clearSel(): void {
     this.selectedHospital = null;

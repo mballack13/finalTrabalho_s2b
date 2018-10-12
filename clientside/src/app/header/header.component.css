@@ -1,5 +1,7 @@
 header { background-color: #66bb6a; }
 
+h1 { margin-bottom: 0%; }
+
 h1 a {
     color: white;
     text-decoration:none;
