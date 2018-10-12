@@ -1,21 +1,3 @@
-<h2>Hospitais</h2>
-<h3>Filtrar Por:</h3>
-<ul>
-  <li *ngFor="let index of hospitals" (click)="onSelect(index)" [class.selected]="isSelected(index)">
-    <span>{{index.name}}</span>
-  </li>
-</ul>
-
-<div *ngIf="selectedHospital">
-  <h2>{{selectedHospital.name | uppercase}}</h2>
-  <hr>
-  <span>Tipo: {{selectedHospital.type}}</span><br>
-  <span>Público ou Privado: {{selectedHospital.public}}</span><br>
-  <span>Telefone: {{selectedHospital.phone}}</span><br>
-  <span>Endereço: {{selectedHospital.address}}</span><br>
-  <span>Site: <a href="{{selectedHospital.link}}">{{selectedHospital.link}}</a></span><br>
-  <span>Especialidades: {{selectedHospital.specialties}}</span><br>
-</div>
 <h2 class="text-center">Hospitais</h2>
 <section class="container-fluid">
   <div class="row">
