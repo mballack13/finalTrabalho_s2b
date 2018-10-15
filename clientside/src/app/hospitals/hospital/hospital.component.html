@@ -4,7 +4,7 @@
   <span class="col-lg-1"></span>
   <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control col-lg-4">
 </div>
-<section class="container-fluid bg-light">
+<section class="container-fluid bg-light p-5">
   <div class="row">
     <div class="col-lg-3 bg-light">
       <div>
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div *ngIf="selectedHospital" class="col-lg-9 mb-3">
-      <div class="bg-white rounded mt-2 p-4 border">
+      <div class="bg-white rounded mt-2 p-5 border">
         <h2 class="m-0">{{selectedHospital.name | uppercase}}</h2>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Tipo: {{selectedHospital.type}}</li>
