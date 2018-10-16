@@ -4,3 +4,16 @@ agm-map { height: 400px; }
     background-color: #f8f9fa;
     margin: 0%;
 }
+
+.inputName, .inputSpec{
+    line-height: 2em;
+    height: 2em;
+}
+
+.btn-sm {
+    font-size: 1em;
+    line-height: 1em;
+    height: 2em;
+    vertical-align: middle;
+
+}

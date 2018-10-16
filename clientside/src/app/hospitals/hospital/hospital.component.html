@@ -1,13 +1,13 @@
 <section class="row form-group container-fluid search-bar p-2 bg-secondary">
     <h3 class="col-lg-2 text-white font-weight-bold">Filtrar Por:</h3>
-    <div class="input-group">
-      <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()" autofocus class="form-control col-lg-2">
+    <div class="input-group col-lg-2">
+        <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()" autofocus class="form-control inputName">
       <div class="input-group-append">
         <button class="btn btn-light btn-sm" (click)="name = ''; filterName()" type="button"><span class="fa fa-times"></span></button>
       </div>
     </div>
-    <div class="input-group">
-      <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control col-lg-2 ml-4">
+    <div class="input-group col-lg-2">
+        <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control inputSpec">
       <div class="input-group-append">
         <button class="btn btn-light btn-sm" (click)="spec = ''; filterSpec()" type="button"><span class="fa fa-times"></span></button>
       </div>
