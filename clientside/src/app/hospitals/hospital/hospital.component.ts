@@ -1,15 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hospital } from 'src/app/models/hospital';
 import { HospitalService } from './hospital.service';
-import {  } from 'rxjs';
+import { Subject, of } from 'rxjs';
+import { debounceTime, delay, distinctUntilChanged, map, flatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hospital',
   templateUrl: './hospital.component.html',
   styleUrls: ['./hospital.component.css']
 })
-export class HospitalComponent implements OnInit {
-  hospitals: Hospital[];
+export class HospitalComponent implements OnInit{
+  hospitals: Hospital[] = [];
   selectedHospital: Hospital;
   spec: string;
   name: string;
@@ -18,17 +19,22 @@ export class HospitalComponent implements OnInit {
   latitude: number = -51;
   longitude: number = -30;
 
+  debounce: Subject<string> = new Subject<string>();
+
   // latitude: number;
   // longitude: number;
 
-  constructor(private hospitalService: HospitalService) { }
+  constructor(private hospitalService: HospitalService) {
+    const subscription = this.debounce.pipe(
+      map(event => event),
+      debounceTime(1000),
+      distinctUntilChanged(),
+      flatMap(search => of(search).pipe(delay(500)))
+    ).subscribe(console.log);
+   }
 
-  ngOnInit(): void {
-    this.getAllHospitals();
-  }
-  getAllHospitals(): void {
-    this.hospitalService.getHospitals().subscribe(dados => this.hospitals = dados);
-  }
+  ngOnInit(): void { this.hospitalService.getHospitals().subscribe(dados => this.hospitals = dados); }
+
   onSelect(h: Hospital): void {
     this.selectedHospital = h;
     this.latPartes = h.latitude.split(',');
