@@ -32,7 +32,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HttpClientModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDc9mTQhIYkTc_94E-hqaO6RQX2l3EJtY4'
+      apiKey: 'AIzaSyATgLZln-J3CqJ1g_uECsOz9EeV4NPIdaE'
     })
   ],
   providers: [HospitalService],

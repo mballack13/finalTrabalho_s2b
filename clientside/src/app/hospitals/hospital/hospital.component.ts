@@ -55,12 +55,14 @@ export class HospitalComponent implements OnInit{
     return(this.selectedHospital === h);
   }
   filterName(): void {
+    this.spec = '';
     this.hospitals.forEach(element => {
       const aux = element.name.toLowerCase();
       element.display = !(aux.includes(this.name.toLowerCase()));
     });
   }
   filterSpec(): void {
+    this.name = '';
     this.hospitals.forEach(element => {
       const aux = element.specialties.toLowerCase();
       element.display = !(aux.includes(this.spec.toLowerCase()));
