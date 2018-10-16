@@ -34,6 +34,7 @@
     </div>
     <div *ngIf="selectedHospital" class="col-lg-8 mb-3">
       <div class="bg-white rounded mt-2 p-5 border">
+        <span (click)="clearSel()" class="fa fa-times close"></span>
         <h2 class="m-0">{{selectedHospital.name | uppercase}}</h2>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Tipo: {{selectedHospital.type}}</li>
