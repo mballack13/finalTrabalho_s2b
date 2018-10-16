@@ -4,11 +4,12 @@
     <span class="col-lg-1"></span>
     <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control col-lg-2 ml-4">
     <div class="btn-group col-lg-4" role="group" aria-label="Especialidades por icones">
-      <button type="button" class="btn btn-light"><img src="../../../assets/heart.png"></button>
-      <button type="button" class="btn btn-light"><img src="../../../assets/brain.png"></button>
-      <button type="button" class="btn btn-light"><img src="../../../assets/broken-leg.png"></button>
-      <button type="button" class="btn btn-light"><img src="../../../assets/baby.png"></button>
-      <button type="button" class="btn btn-light"><img src="../../../assets/tooth.png"></button>
+      <button type="button" (click)="spec = 'cardiologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/heart.png"></button>
+      <button type="button" (click)="spec = 'neurologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/brain.png"></button>
+      <button type="button" (click)="spec = 'traumatologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/broken-leg.png"></button>
+      <button type="button" (click)="spec = 'pediatria'; filterSpec()" class="btn btn-light"><img src="../../../assets/baby.png"></button>
+      <button type="button" (click)="spec = 'odontologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/tooth.png"></button>
+      <button type="button" (click)="spec = 'ginecologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/uterus.png"></button>
     </div>
 </section>
 <section class="container-fluid bg-light p-5">
