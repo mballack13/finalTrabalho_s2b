@@ -9,15 +9,15 @@ import { debounceTime, delay, distinctUntilChanged, map, flatMap } from 'rxjs/op
   templateUrl: './hospital.component.html',
   styleUrls: ['./hospital.component.css']
 })
-export class HospitalComponent implements OnInit{
+export class HospitalComponent implements OnInit {
   hospitals: Hospital[] = [];
   selectedHospital: Hospital;
   spec: string;
   name: string;
   latPartes: string[];
   longPartes: string[];
-  latitude: number = -51;
-  longitude: number = -30;
+  latitude = -51;
+  longitude = -30;
 
   debounce: Subject<string> = new Subject<string>();
 
@@ -38,9 +38,9 @@ export class HospitalComponent implements OnInit{
   onSelect(h: Hospital): void {
     this.selectedHospital = h;
     this.latPartes = h.latitude.split(',');
-    this.latitude = parseFloat(this.latPartes[0]+'.'+this.latPartes[1]);
+    this.latitude = parseFloat(this.latPartes[0] + '.' + this.latPartes[1]);
     this.longPartes = h.longitude.split(',');
-    this.longitude = parseFloat(this.longPartes[0]+'.'+this.longPartes[1]);
+    this.longitude = parseFloat(this.longPartes[0] + '.' + this.longPartes[1]);
 
     // this.latitude = this.parseLatitude(h);
     // console.log(this.latitude);
