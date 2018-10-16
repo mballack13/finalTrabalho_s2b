@@ -33,7 +33,12 @@
           </li>
           <li class="list-group-item">Especialidades: {{selectedHospital.specialties}}</li>
           <agm-map class="border" *ngIf="latitude && longitude" [zoom]="18" [latitude]="latitude" [longitude]="longitude">
-            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+            <agm-marker [latitude]="latitude" [longitude]="longitude">
+                <agm-info-window>
+                  {{selectedHospital.name}}<br>
+                  Telefone: {{selectedHospital.phone}}
+                </agm-info-window>
+            </agm-marker>
           </agm-map>
         </ul>
       </div>
