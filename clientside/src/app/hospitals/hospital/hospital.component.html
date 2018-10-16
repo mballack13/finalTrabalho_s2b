@@ -1,22 +1,21 @@
-<div class="row form-group container-fluid search-bar p-2 bg-secondary">
-  <h3 class="col-lg-2 text-white">Filtrar Por:</h3>
-  <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()" autofocus class="form-control col-lg-4">
-  <span class="col-lg-1"></span>
-  <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control col-lg-4">
-</div>
+<section class="row form-group container-fluid search-bar p-2 bg-secondary">
+    <h3 class="col-lg-2 text-white font-weight-bold">Filtrar Por:</h3>
+    <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()" autofocus class="form-control col-lg-4">
+    <span class="col-lg-1"></span>
+    <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control col-lg-4">
+</section>
 <section class="container-fluid bg-light p-5">
   <div class="row">
-    <div class="col-lg-3 bg-light">
+    <div class="col-lg-4 bg-light">
       <div>
         <ul class="list-group text-center mt-2 mb-2">
-          <li *ngFor="let index of hospitals" [hidden]="index.display" (click)="onSelect(index)" [class.selected]="isSelected(index)"
-          class="list-group-item">
+          <li *ngFor="let index of hospitals" [hidden]="index.display" (click)="onSelect(index)" [class.selected]="isSelected(index)" class="list-group-item">
             <a class="btn">{{index.name}}</a>
           </li>
         </ul>
       </div>
     </div>
-    <div *ngIf="selectedHospital" class="col-lg-9 mb-3">
+    <div *ngIf="selectedHospital" class="col-lg-8 mb-3">
       <div class="bg-white rounded mt-2 p-5 border">
         <h2 class="m-0">{{selectedHospital.name | uppercase}}</h2>
         <ul class="list-group list-group-flush">
@@ -28,7 +27,7 @@
             <a href="{{selectedHospital.link}}">{{selectedHospital.link}}</a>
           </li>
           <li class="list-group-item">Especialidades: {{selectedHospital.specialties}}</li>
-          <agm-map *ngIf="latitude && longitude" [zoom]="18" [latitude]="latitude" [longitude]="longitude">
+          <agm-map class="border" *ngIf="latitude && longitude" [zoom]="18" [latitude]="latitude" [longitude]="longitude">
             <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
           </agm-map>
         </ul>
