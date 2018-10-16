@@ -25,6 +25,7 @@
   <div class="row">
     <div class="col-lg-4 bg-light">
       <div>
+        <h2 class=m-0>Clique no nome do hospital para receber mais detalhes...</h2>
         <ul class="list-group text-center mt-2 mb-2">
           <li *ngFor="let index of hospitals" [hidden]="index.display" (click)="onSelect(index)" [class.selected]="isSelected(index)" class="list-group-item">
             <a class="btn">{{index.name}}</a>
