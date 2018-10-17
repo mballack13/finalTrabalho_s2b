@@ -5,15 +5,13 @@ agm-map { height: 400px; }
     margin: 0%;
 }
 
-.inputName, .inputSpec, .close{
+.inputName, .inputSpec {
     line-height: 2em;
     height: 2em;
 }
 
-.btn-sm {
+.btn-sm, .close, .btn-spec {
     font-size: 1em;
     line-height: 1em;
     height: 2em;
-    vertical-align: middle;
-
 }
