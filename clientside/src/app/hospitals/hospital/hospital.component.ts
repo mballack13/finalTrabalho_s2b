@@ -18,6 +18,7 @@ export class HospitalComponent implements OnInit {
   longPartes: string[];
   latitude = -51;
   longitude = -30;
+  cont: number;
 
   debounce: Subject<string> = new Subject<string>();
 
@@ -55,17 +56,23 @@ export class HospitalComponent implements OnInit {
     return(this.selectedHospital === h);
   }
   filterName(): void {
-    this.spec = '';
+    this.cont = 0;
     this.hospitals.forEach(element => {
       const aux = element.name.toLowerCase();
       element.display = !(aux.includes(this.name.toLowerCase()));
+      if (!element.display) {
+        this.cont++;
+      }
     });
   }
   filterSpec(): void {
-    this.name = '';
+    this.cont = 0;
     this.hospitals.forEach(element => {
       const aux = element.specialties.toLowerCase();
       element.display = !(aux.includes(this.spec.toLowerCase()));
+      if (!element.display) {
+        this.cont++;
+      }
     });
   }
 

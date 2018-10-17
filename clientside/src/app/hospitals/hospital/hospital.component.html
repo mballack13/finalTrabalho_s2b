@@ -1,24 +1,36 @@
 <section class="row form-group container-fluid search-bar p-2 bg-secondary">
     <h3 class="col-lg-2 text-white font-weight-bold">Filtrar Por:</h3>
     <div class="input-group col-lg-2">
-        <input placeholder="Nome" [(ngModel)]="name" (keyup)="filterName()" autofocus class="form-control inputName">
+        <input placeholder="Nome" [(ngModel)]="name" (keyup)="spec = ''; filterName()" autofocus class="form-control inputName">
       <div class="input-group-append">
         <button class="btn btn-light btn-sm" (click)="name = ''; filterName()" type="button"><span class="fa fa-times"></span></button>
       </div>
     </div>
     <div class="input-group col-lg-2">
-        <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="filterSpec()" class="form-control inputSpec">
+        <input placeholder="Especialidade" [(ngModel)]="spec" (keyup)="name = ''; filterSpec()" class="form-control inputSpec">
       <div class="input-group-append">
         <button class="btn btn-light btn-sm" (click)="spec = ''; filterSpec()" type="button"><span class="fa fa-times"></span></button>
       </div>
     </div>
     <div class="btn-group col-lg-4" role="group" aria-label="Especialidades por icones">
-      <button type="button" (click)="spec = 'cardiologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/heart.png"></button>
-      <button type="button" (click)="spec = 'neurologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/brain.png"></button>
-      <button type="button" (click)="spec = 'traumatologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/broken-leg.png"></button>
-      <button type="button" (click)="spec = 'pediatria'; filterSpec()" class="btn btn-light"><img src="../../../assets/baby.png"></button>
-      <button type="button" (click)="spec = 'odontologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/tooth.png"></button>
-      <button type="button" (click)="spec = 'ginecologia'; filterSpec()" class="btn btn-light"><img src="../../../assets/uterus.png"></button>
+      <button type="button" (click)="spec = 'Cardiologia'; filterSpec()" class="btn btn-light" title="Cardiologia">
+        <img src="../../../assets/heart.png">
+      </button>
+      <button type="button" (click)="spec = 'Neurologia'; filterSpec()" class="btn btn-light" title="Neurologia">
+        <img src="../../../assets/brain.png">
+      </button>
+      <button type="button" (click)="spec = 'Traumatologia'; filterSpec()" class="btn btn-light" title="Traumatologia">
+        <img src="../../../assets/broken-leg.png">
+      </button>
+      <button type="button" (click)="spec = 'Pediatria'; filterSpec()" class="btn btn-light" title="Pediatria">
+        <img src="../../../assets/baby.png">
+      </button>
+      <button type="button" (click)="spec = 'Odontologia'; filterSpec()" class="btn btn-light" title="Odontologia">
+        <img src="../../../assets/tooth.png">
+      </button>
+      <button type="button" (click)="spec = 'Ginecologia'; filterSpec()" class="btn btn-light" title="Ginecologia">
+        <img src="../../../assets/uterus.png">
+      </button>
     </div>
 </section>
 <section class="container-fluid bg-light p-5">
@@ -26,6 +38,8 @@
     <div class="col-lg-4 bg-light">
       <div>
         <h2 class=m-0>Clique no nome do hospital para receber mais detalhes...</h2>
+        <p *ngIf="cont !== 26 && cont !== 0 && cont !== undefined">Sua busca encontrou {{cont}} resultados!</p>
+        <p *ngIf="cont === 0">Sua busca não encontrou resultados! Tente com outro termo...</p>
         <ul class="list-group text-center mt-2 mb-2">
           <li *ngFor="let index of hospitals" [hidden]="index.display" (click)="onSelect(index)" [class.selected]="isSelected(index)" class="list-group-item">
             <a class="btn">{{index.name}}</a>
@@ -35,7 +49,7 @@
     </div>
     <div *ngIf="selectedHospital" class="col-lg-8 mb-3">
       <div class="bg-white rounded mt-2 p-5 border">
-        <span (click)="clearSel()" class="fa fa-times close"></span>
+        <span (click)="clearSel()" class="fa fa-times close btn-sm btn btn-light border border-secondary"></span>
         <h2 class="m-0">{{selectedHospital.name | uppercase}}</h2>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Tipo: {{selectedHospital.type}}</li>

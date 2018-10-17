@@ -5,7 +5,7 @@ agm-map { height: 400px; }
     margin: 0%;
 }
 
-.inputName, .inputSpec{
+.inputName, .inputSpec, .close{
     line-height: 2em;
     height: 2em;
 }
